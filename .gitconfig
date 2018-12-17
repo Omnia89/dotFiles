@@ -1,0 +1,29 @@
+[core]
+	excludesfile = /Users/flavio/.gitignore_global
+	editor = nvim
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = true
+[mergetool "vimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+	prompt = false
+[diff]
+	tool = vimdiff
+[user]
+	name = flavio@anakin
+	email = crsf@viessmann.com
+[commit]
+	template = /Users/flavio/.stCommitMsg
+[push]
+	followTags = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	tree = log --all --graph --abbrev-commit --date=short --decorate --format=format:'%C(auto)%h%x09%C(reset)%C(magenta)%cd%C(reset) %s %C(blue)[%an]%C(reset) %C(auto)%d'
+	ftree = !git fetch $1 && git tree
