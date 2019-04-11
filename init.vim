@@ -1,4 +1,5 @@
 :set nu
+:set relativenumber
 :set listchars=tab:\|—,trail:·,extends:»,precedes:«
 :set list
 :set nowrap
@@ -35,7 +36,6 @@ Plug 'mattn/emmet-vim'
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " On-demand loading
-"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Using a non-master branch
@@ -53,7 +53,6 @@ Plug 'mattn/emmet-vim'
 
 " Unmanaged plugin (manually installed and updated)
 " Plug '~/my-prototype-plugin'
-
 
 " Initialize plugin system
 call plug#end()
@@ -115,6 +114,12 @@ map <leader>bq :bp<bar>sp<bar>bn<bar>bd<CR>.
 nnoremap <Leader>o :CtrlP<CR>
 
 nnoremap <Leader>f :e .<CR>
+
+" Mappo i comandi per muovermi tra le finestre
+nnoremap <Leader>wh <C-w>h
+nnoremap <Leader>wj <C-w>j
+nnoremap <Leader>wk <C-w>k
+nnoremap <Leader>wl <C-w>l
 
 set tabstop=4           " Render TABs using this many spaces.
 set shiftwidth=4        " Indentation amount for < and > commands.
