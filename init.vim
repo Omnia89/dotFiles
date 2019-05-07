@@ -1,60 +1,49 @@
 :set nu
 :set relativenumber
-:set listchars=tab:\|—,trail:·,extends:»,precedes:«
+" └ => u2514
+" ╰ => u2570
+:set listchars=tab:\└—,trail:·,extends:»,precedes:«
 :set list
 :set nowrap
+:set scrolloff=15
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Make sure you use single quotes
+	" Make sure you use single quotes
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'flazz/vim-colorschemes'
+	" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 
-Plug 'scrooloose/nerdtree'
+	" plugin molto carino, non usato al momento, serve per allineare varie
+	" righe in colonne (ES: file route di play)
+	Plug 'junegunn/vim-easy-align'
 
-Plug 'ctrlpvim/ctrlp.vim'
+	" la status bar 'Airline' e tema
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 
-Plug 'jwalton512/vim-blade'
-Plug 'mhinz/vim-startify'
+	" plugin per utilizzare le abbreviazioni emmet per HTML
+	Plug 'mattn/emmet-vim'
 
-Plug 'mattn/emmet-vim'
-"Plug 'justinmk/vim-dirvish' " file explorer strano
+	" plugin che raggruppa molti colorscheme in un unico pacchetto
+	" richiamabili con nei setting con: colorscheme <nome colorscheme"
+	Plug 'flazz/vim-colorschemes'
 
-" Any valid git URL is allowed
-"Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+	" visualizzatore cartelle ad albero
+	Plug 'scrooloose/nerdtree'
 
-" Multiple Plug commands can be written in a single line using | separators
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+	" Fuzzy file/buffer/tag etc per vim
+	" da configurare bene
+	Plug 'ctrlpvim/ctrlp.vim'
 
-" On-demand loading
-"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+	" highlight per i file blade.php (FORSE OBSOLETO)
+	Plug 'jwalton512/vim-blade'
 
-" Using a non-master branch
-"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+	" pagina iniziale per vim, molto figo
+	Plug 'mhinz/vim-startify'
 
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-"Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Plugin options
-"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" ^^ forse in futuro ^^
-
-" Unmanaged plugin (manually installed and updated)
-" Plug '~/my-prototype-plugin'
-
-" Initialize plugin system
 call plug#end()
 
 let NERDTreeHijackNetrw=1
@@ -65,6 +54,7 @@ colorscheme brogrammer
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
+
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''

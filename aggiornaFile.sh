@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo "---- Copio file dalle varie origini ----"
-mv -f ~/.gitconfig ./.gitconfig
-mv -f ~/.zshrc ./.zshrc
-mv -f ~/.config/nvim/init.vim ./init.vim
+cp -f ~/.gitconfig ./.gitconfig
+cp -f ~/.zshrc ./.zshrc
+cp -f ~/.config/nvim/init.vim ./init.vim
 
 giorno=`date +%Y-%m-%d`
 ora=`date +%T`
