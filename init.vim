@@ -1,11 +1,12 @@
 :set nu
 :set relativenumber
+:set cursorline
 " └ => u2514
 " ╰ => u2570
 :set listchars=tab:\└—,trail:·,extends:»,precedes:«
 :set list
 :set nowrap
-:set scrolloff=15
+:set scrolloff=20
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -67,6 +68,7 @@ let g:airline_symbols.maxlinenr = ''
 
 let g:startify_bookmarks = [
 		\ {'v': '~/.config/nvim/init.vim'},
+		\ {'z': '~/.zshrc'},
 	\ ]
 
 let mapleader = "\<Space>"
