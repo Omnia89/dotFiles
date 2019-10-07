@@ -3,6 +3,7 @@
 echo "---- Copio file dalle varie origini ----"
 cp -f ~/.gitconfig ./.gitconfig
 cp -f ~/.zshrc ./.zshrc
+cp -f ~/.taskrc ./.taskrc
 cp -f ~/.config/nvim/init.vim ./init.vim
 
 giorno=`date +%Y-%m-%d`
