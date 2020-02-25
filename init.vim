@@ -118,7 +118,8 @@ set shiftwidth=4        " Indentation amount for < and > commands.
 
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
 
-set cc=80
+" linea verticale (per segnalare un soft wrap)
+" set cc=80
 
 " More natural splits
 set splitbelow          " Horizontal split below current.
