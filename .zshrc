@@ -2,6 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/Users/flavio/.composer/vendor/bin:/usr/local/mysql/bin/
 
+# inserisco l'export per JAVA, per risolvere il bug con sbt
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/flavio/.oh-my-zsh
 
@@ -96,6 +99,11 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 alias gmnf="git merge --no-ff"
+
+# funzione "alias" per task warrior: visualizza i task del progetto con il nome uguale alla working directory
+tp() {
+	task project:"$(pwd | awk '{n=split($0, a, "/"); print a[n]}')"
+}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads 
