@@ -102,7 +102,7 @@ alias gmnf="git merge --no-ff"
 
 # funzione "alias" per task warrior: visualizza i task del progetto con il nome uguale alla working directory
 tp() {
-	task project:"$(pwd | awk '{n=split($0, a, "/"); print a[n]}')"
+	task project:"$(pwd | awk '{n=split($0, a, "/"); print a[n]}')" $@
 }
 
 export NVM_DIR="$HOME/.nvm"
