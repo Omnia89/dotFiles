@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/Users/flavio/.composer/vendor/bin:/usr/local/mysql/bin/
@@ -11,7 +18,8 @@ export ZSH=/Users/flavio/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="random"
 #ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -92,9 +100,9 @@ source $ZSH/oh-my-zsh.sh
 #
 
 #POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# VECCHIO TEMA, ora è nel suo file a parte
+#POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -109,8 +117,16 @@ tpa() {
 	task add project:"$(pwd | awk '{n=split($0, a, "/"); print a[n]}')" $@
 }
 
+# funzione per switchare tra le varie versioni di php installate tramite homebrew
+switchphp() {
+    brew unlink php && brew link --force --overwrite php@$1
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(rbenv init -)" # Carica automaticamente il selettore delle versioni di ruby RBENV
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
